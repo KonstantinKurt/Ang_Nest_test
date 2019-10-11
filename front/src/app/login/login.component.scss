@@ -1,0 +1,97 @@
+.container {
+    position: absolute;
+    width: 26%;
+    height: 30%;
+    left: 37%;
+    top: 15%;
+    box-shadow: 7px 7px 5px #3A3939;
+    text-align: center;
+    border: solid black 1px;
+    background-color: rgb(197, 227, 239);
+    border-radius: 5px;
+}
+
+;
+.buttonOk {
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    top: 85%;
+    left: 65%;
+    background-color: SkyBlue;
+    cursor: pointer;
+    border-style: outset;
+    font-size: 90%;
+    border-radius: 5px;
+}
+
+;
+.buttonOk:active {
+    box-shadow: 0.5px 0.5px 0.5px #3A3939;
+    border-style: inset;
+}
+
+.buttonSignUp {
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    top: 85%;
+    left: 10%;
+    border-style: outset;
+    font-size: 90%;
+    cursor: pointer;
+    background-color: SkyBlue;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+;
+.buttonSignUp:active {
+    box-shadow: 0.5px 0.5px 0.5px #3A3939;
+    border-style: inset;
+}
+
+;
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 6px 0px;
+}
+
+input.ng-touched.ng-invalid {
+    border: solid red 2px;
+}
+
+input.ng-touched.ng-valid {
+    border: solid green 2px;
+}
+
+.inputText {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    margin: auto;
+    font-size: 1em;
+    line-height: 1.5em;
+    border: black solid 1px;
+    text-align: right;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+;
+input:focus {
+    border: blue solid 2px;
+}
+
+;
+label {
+    font-size: 1.3em;
+    font-family: arial;
+}
+
+;
+h1 {
+    font-family: arial;
+}

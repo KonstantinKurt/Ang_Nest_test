@@ -1,0 +1,44 @@
+<body xmlns="http://www.w3.org/1999/html">
+<form class="containerRegForm">
+    <h1 style="alignment: center">
+        {{registerTitle}}
+    </h1>
+    <div style="position: absolute; left: 10%; width: 80%">
+        <div class="inputDiv form-group">
+            <label for="inputLogin">Login*</label>
+            <input id="inputLogin" class="inputText form-control" placeholder="input login" type="text" name="login"
+                   [(ngModel)]="user.login" #login="ngModel"
+                   required>
+        </div>
+        <div class="inputDiv form-group">
+            <label for="inputEmail">Email*</label>
+            <input id="inputEmail" class="inputText form-control" placeholder="input email" type="text" name="email"
+                   [(ngModel)]="user.email" #email="ngModel" required
+                   pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}">
+            <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                Incorrect email
+            </div>
+        </div>
+        <hr>
+        <div class="inputDiv form-group">
+            <label for="inputPassword">Password*</label>
+            <input id="inputPassword" class="inputText form-control" placeholder="input password" type="password"
+                   name="password"
+                   [(ngModel)]="user.password" #password="ngModel"
+                   required>
+        </div>
+        <div class="inputDiv form-group">
+            <label for="confirmPassword">Confirm Password*</label>
+            <input id="confirmPassword" class="inputText form-control "[ngClass]="user.password !== user.confirmPassword ? 'error' : ''"
+                   placeholder="confirm password" type="password"
+                   name="confirmPassword"
+                   [(ngModel)]="user.confirmPassword" required #confirmPassword="ngModel">
+        </div>
+        <hr>
+        <button class="buttonRegister form-control" type="button" [disabled]="user.password !== user.confirmPassword ||
+   !user.password || !user.login || !user.email" (click)="registerRequest()">
+            Register
+        </button>
+    </div>
+</form>
+</body>

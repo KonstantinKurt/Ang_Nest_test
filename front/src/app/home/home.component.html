@@ -1,0 +1,139 @@
+<body>
+<div class="tableContainer">
+    <table>
+        <thead style="color: blue">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Contact info</th>
+        <th>Created at</th>
+        </thead>
+        <tr *ngFor="let employee of employees" (click)="getSelectedEmployee(employee)"
+            [class.selectedRow]="employee === selectedEmployee">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.position}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.info}}</td>
+            <td>{{employee.createdAt.split('T')[0]}}</td>
+        </tr>
+    </table>
+</div>
+<div class="paginationContainer">
+    <button class="paginationButton" [disabled]="pagination === 10" (click)="paginationDecrease()">◀</button>
+    <label class="paginationLabel">{{pagination - 10}} - {{pagination}}</label>
+    <button class="paginationButton" (click)="paginationIncrease()">▶</button>
+</div>
+<div class="updateEmployeeContainer">
+    <h1 class="listHeader">Employee information</h1>
+    <ul>
+        <li>
+            <label for="employeeFirstName">First Name:</label>
+            <input id="employeeFirstName" placeholder="{{selectedEmployee.firstName}}"
+                   [(ngModel)]="selectedEmployee.firstName">
+        </li>
+        <li>
+            <label for="employeeLastName">Last Name:</label>
+            <input id="employeeLastName" placeholder="{{selectedEmployee.lastName}}" #email="ngModel"
+                   [(ngModel)]="selectedEmployee.lastName">
+        </li>
+        <li>
+            <label for="employeePosition">Position:</label>
+            <input id="employeePosition" placeholder="{{selectedEmployee.position}}"
+                   [(ngModel)]="selectedEmployee.position">
+        </li>
+        <li>
+            <label for="employeeSalary">Salary:</label>
+            <input id="employeeSalary" type="number" placeholder="{{selectedEmployee.salary}}" [(ngModel)]="selectedEmployee.salary">
+        </li>
+        <li>
+            <label for="employeeGender">Gender:</label>
+<!--            <input id="employeeGender" placeholder="{{selectedEmployee.gender}}" [(ngModel)]="selectedEmployee.gender">-->
+            <select id="employeeGender" [(ngModel)]="selectedEmployee.gender">
+                <option disabled>{{selectedEmployee.gender}}</option>
+                <option >Male</option>
+                <option >Female</option>
+            </select>
+
+        </li>
+        <li>
+            <label for="employeeContactInfo">Contact info:</label>
+            <textarea
+                    id="employeeContactInfo" placeholder="{{selectedEmployee.info}}"
+                    [(ngModel)]="selectedEmployee.info">
+
+            </textarea>
+        </li>
+    </ul>
+   <div class="crudContainer">
+       <button class="createEmployeeButton" (click)="createEmployeeRequest()"
+               [disabled]="!selectedEmployee.firstName || !selectedEmployee.lastName || !selectedEmployee.gender || !selectedEmployee.position||
+             !selectedEmployee.salary|| !selectedEmployee.info">
+           Create
+       </button>
+       <button class="updateEmployeeButton" (click)="updateEmployeeRequest()"
+               [disabled]="!selectedEmployee.firstName || !selectedEmployee.lastName || !selectedEmployee.gender || !selectedEmployee.position||
+             !selectedEmployee.salary|| !selectedEmployee.info">
+           Update
+       </button>
+       <button class="deleteEmployeeButton" (click)="deleteEmployeeRequest()"
+               [disabled]="!selectedEmployee.firstName || !selectedEmployee.lastName || !selectedEmployee.gender || !selectedEmployee.position||
+           !selectedEmployee.salary|| !selectedEmployee.info">
+           Delete
+       </button>
+   </div>
+
+</div>
+<div class="listContainer">
+    <h1 class="listHeader">Personal information</h1>
+    <ul>
+        <li>
+            <label for="userFirstName">Login:</label>
+            <input id="userFirstName" placeholder="{{user.login}}" [(ngModel)]="user.login">
+        </li>
+        <li>
+            <label for="userEmail">Email:</label>
+            <input id="userEmail" placeholder="{{user.email}}" #email="ngModel"
+                   name="email" pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}" [(ngModel)]="user.email">
+            <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                Incorrect email
+            </div>
+        </li>
+        <li>
+            <label for="userPassword">Password:</label>
+            <input id="userPassword" type="password" placeholder="{{user.password}}" [(ngModel)]="user.password">
+        </li>
+        <li>
+            <label for="userConfirmPassword"> Confirm Password:</label>
+            <input id="userConfirmPassword" type="password" placeholder="{{user.confirmPassword}}"
+                   [(ngModel)]="user.confirmPassword"
+                   [ngClass]="user.password !== user.confirmPassword ? 'error' : ''">
+        </li>
+    </ul>
+    <button class="updateButton" (click)="updateRequest()"
+            [disabled]="!user.email || !email.valid || user.password != user.confirmPassword">
+        Update
+    </button>
+</div>
+<div class="searchDiv">
+    <input class="searchInput" placeholder="First Name" [(ngModel)]="searchParams.firstName">
+    <input class="searchInput" placeholder="Last Name" [(ngModel)]="searchParams.lasName">
+    <input class="searchInput" placeholder="Position" [(ngModel)]="searchParams.position">
+    <input class="searchInput" placeholder="Salary" [(ngModel)]="searchParams.salary">
+    <input class="searchInput" placeholder="Contact Info" [(ngModel)]="searchParams.info">
+    <input class="searchInput" placeholder="Created At" [(ngModel)]="searchParams.createdAt">
+    <select class="searchSelect" id="" [(ngModel)]="searchParams.gender">
+        <option ></option>
+        <option >Male</option>
+        <option >Female</option>
+    </select>
+</div>
+<div class="searchButtonsDiv">
+    <button class="searchButtonStart" (click)="getEmployeesByParams()">Start search</button>
+    <button class="searchButtonStop" (click)="stopSearching()">Stop search</button>
+</div>
+
+</body>

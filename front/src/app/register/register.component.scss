@@ -1,0 +1,33 @@
+.containerRegForm {
+    position: absolute;
+    width: 26%;
+    height: 45%;
+    left: 37%;
+    top: 10%;
+    box-shadow: 7px 7px 5px #3A3939;
+    text-align: center;
+    border: solid black 1px;
+    background-color: rgb(197, 227, 239);
+    min-width: 400px;
+    border-radius: 5px;
+}
+
+.error {
+    border: red;
+}
+
+.buttonRegister {
+    position: relative;
+    width: 90%;
+    height: 5%;
+    border-style: outset;
+    font-size: 1.8em;
+    cursor: pointer;
+    background-color: SkyBlue;
+    text-decoration: none;
+}
+
+.buttonRegister:active {
+    box-shadow: 0.5px 0.5px 0.5px #3A3939;
+    border-style: inset;
+} ;

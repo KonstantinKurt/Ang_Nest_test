@@ -1,0 +1,299 @@
+.tableContainer {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border: solid black 1px;
+  background-color: rgb(197, 227, 239);
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px #3A3939;
+  overflow-y: scroll;
+}
+
+.listContainer {
+  position: absolute;
+  width: 33%;
+  left: 63%;
+  border: solid black 1px;
+  background-color: rgb(197, 227, 239);
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px #3A3939;
+
+}
+.listHeader {
+  text-align: center;
+  position: relative;
+  font-size: 1.8em;
+}
+
+//.contactTextArea{
+//  position: relative;
+//  width: 89%;
+//  display: block;
+//  left: 6%;
+//  padding: 2px;
+//  min-width: calc(100% - 11%);
+//  max-width: calc(100% - 11%);
+//  max-height: 300px;
+//  border-radius: 5px;
+//}
+.updateButton {
+  position: relative;
+  width: 30%;
+  height: 6%;
+  left: 66%;
+  border-style: outset;
+  margin-bottom: 1%;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #D3F7E2;
+}
+
+.updateButton:active {
+  box-shadow: 0.5px 0.5px 0.5px #3A3939;
+  border-style: inset;
+}
+
+.error {
+  border: red solid;
+}
+
+.paginationContainer {
+  position: absolute;
+  top: 63%;
+  left: 23%;
+  height: 3%;
+  width: 20%;
+}
+
+.paginationButton {
+  position: relative;
+  width: 30%;
+  border-style: outset;
+  margin-bottom: 1%;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #EEF6A7;
+}
+
+.paginationButton:active {
+  box-shadow: 0.5px 0.5px 0.5px #3A3939;
+  border-style: inset;
+}
+
+.paginationLabel {
+  position: relative;
+  width: 40%;
+  margin: 2em;
+}
+
+.selectedRow {
+  background-color: deepskyblue;
+}
+
+.updateEmployeeContainer {
+  position: absolute;
+  width: 33%;
+  left: 63%;
+  top: 33%;
+  height: 50%;
+  border: solid black 1px;
+  background-color: rgb(197, 227, 239);
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px #3A3939;
+}
+
+li {
+  display: flex;
+  padding: 2px;
+}
+
+li > label {
+  font-size: 1.2em;
+  color: blue;
+  position: relative;
+  width: 20%;
+  overflow: hidden;
+  display: block;
+}
+
+li > input {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  display: block;
+  margin: 0.1em;
+  font-size: 1.3em;
+  border-radius: 5px;
+}
+
+th, tr {
+  padding: 1em;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+
+}
+
+td {
+  padding: 1em;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  height: 10px;
+}
+
+table {
+  position: relative;
+  width: 98%;
+  height: 96%;
+  margin: 1%;
+  border-collapse: collapse;
+  overflow-y: scroll;
+}
+
+select {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  display: block;
+  margin: 0.1em;
+  font-size: 1.3em;
+  border-radius: 5px;
+}
+
+textarea {
+  position: relative;
+  width: 75%;
+  display: block;
+  padding: 2px;
+  max-height: 300px;
+  border-radius: 5px;
+  margin: 0.3em;
+}
+
+.passwordLabel {
+  font-size: 1.5em;
+  color: blue;
+  position: relative;
+  width: 20%;
+  left: 5%;
+  overflow: hidden;
+  display: block;
+}
+
+.crudContainer {
+  position: relative;
+  width: 90%;
+  left: 5%;
+}
+
+.createEmployeeButton {
+  position: relative;
+  width: 30%;
+  height: 6%;
+  margin: 0.3em;
+  border-style: outset;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #7FF7B7;
+}
+
+.createEmployeeButton:active {
+  box-shadow: 0.5px 0.5px 0.5px #3A3939;
+  border-style: inset;
+}
+
+.updateEmployeeButton {
+  position: relative;
+  width: 30%;
+  height: 6%;
+  margin: 0.3em;
+  border-style: outset;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #D3F7E2;
+}
+
+.updateEmployeeButton:active {
+  box-shadow: 0.5px 0.5px 0.5px #3A3939;
+  border-style: inset;
+}
+
+.deleteEmployeeButton {
+  position: relative;
+  width: 30%;
+  height: 6%;
+  margin: 0.3em;
+  border-style: outset;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #F9DED7;
+}
+
+.deleteEmployeeButton:active {
+  box-shadow: 0.5px 0.5px 0.5px #3A3939;
+  border-style: inset;
+}
+
+.searchDiv {
+  position: absolute;
+  border: 1px solid black;
+  width: 60%;
+  top: 68%;
+  height: 15%;
+  background-color: rgb(197, 227, 239);
+  border-radius: 5px;
+  box-shadow: 7px 7px 5px #3A3939;
+  display: flex;
+}
+
+.searchButton:active {
+  box-shadow: 0.5px 0.5px 0.5px #3A3939;
+  border-style: inset;
+}
+
+.searchInput {
+  position: relative;
+  width: 11%;
+  height: 12%;
+  margin: 1em;
+}
+
+.searchSelect {
+  position: relative;
+  width: 11%;
+  height: 12%;
+  margin: 1em;
+  font-size: 1.05em;
+}
+
+.searchButtonsDiv {
+  position: absolute;
+  width: 60%;
+  top: 75%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+.searchButtonStart {
+  position: relative;
+  width: 30%;
+  height: 20%;
+  margin: 1em;
+  border-style: outset;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #CFF7F6;
+}
+
+.searchButtonStop {
+  position: relative;
+  width: 30%;
+  height: 20%;
+  margin: 1em;
+  border-style: outset;
+  font-size: 1.4em;
+  cursor: pointer;
+  background-color: #F9DED7;
+}

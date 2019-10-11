@@ -1,0 +1,27 @@
+<body>
+<form class="container">
+    <h1 style="alignment: center">
+        {{loginTitle}}
+    </h1>
+    <div style="position: absolute; left: 10%; width: 80%">
+        <div class="inputDiv form-group">
+            <label for="inputLogin">Login</label>
+            <input id="inputLogin" class="inputText form-control" placeholder="input login" name="login" [(ngModel)]="user.login" #login="ngModel" required>
+<!--            <div [hidden]="login.valid || login.untouched" class="alert alert-danger">-->
+<!--                Login field is required-->
+<!--            </div>-->
+        </div>
+        <div class="inputDiv form-group">
+            <label for="inputPassword">Password</label>
+            <input id="inputPassword" class="inputText form-control" placeholder="input password" type="password" name="password" [(ngModel)]="user.password"
+                   #password="ngModel" required>
+<!--            <div [hidden]="password.valid || password.untouched" class="alert alert-danger">-->
+<!--                Password field is required-->
+<!--            </div>-->
+        </div>
+    </div>
+    <button class="buttonOk form-control" type="button" [disabled]="!user.login || !user.password" (click)="loginRequest()">OK</button>
+    <button class="buttonSignUp form-control" routerLink="/register">Sign Up</button>
+</form>
+</body>
+
